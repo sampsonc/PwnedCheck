@@ -35,6 +35,6 @@ Gem::Specification.new do |s|
   s.has_rdoc    = 'yard'
   s.add_runtime_dependency 'mechanize'
   s.add_runtime_dependency 'addressable'
-  s.extra_rdoc_files  = %w(README.md AUTHOR.md)
+  s.extra_rdoc_files  = %w(README.md AUTHOR.md LICENSE.md)
   s.rdoc_options      = [ '--charset=UTF-8' ]
 end
