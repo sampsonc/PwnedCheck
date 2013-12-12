@@ -1,3 +1,4 @@
+# @author Carl Sampson <chs@chs.us>
 require 'mechanize'
 require 'addressable/uri'
 require 'json'
@@ -11,13 +12,15 @@ module PwnedCheck
     end
   end
 
-  # Check the address
+  # Check an address against http://haveibeenpwned.com
   #
-  # Example:
-  #  >> PwnedCheck.check('chs@chs.us')
+  # == Parameters:
+  # address::
+  #   An email address to check
   #
-  # Arguments:
-  # address: String
+  # == Returns::
+  #   An array of sites the email address was found on or a BadRequest exception
+  #
   def self.check(address)
     agent = Mechanize.new
     begin
