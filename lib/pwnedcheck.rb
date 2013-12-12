@@ -55,7 +55,7 @@ module PwnedCheck
       when '400'
         raise BadRequest
       else
-        raise e
+        raise ex
       end
     else
       JSON.parse(page.content)
