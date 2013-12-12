@@ -1,9 +1,26 @@
-PwnedCheck
-==========
+# PwnedCheck
 
 Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 
-#Usage
+<table>
+    <tr>
+        <th>Version</th>
+        <td>1.0.4</td>
+    </tr>
+    <tr>
+        <th>Github</th>
+        <td><a href="http://github.com/sampsonc/PwnedCheck">http://github.com/sampsonc/PwnedCheck</a></td>
+    </tr>
+    <tr>
+       <th>Author</th>
+       <td><a href="http://www.chs.us">Carl Sampson</a> (<a href="http://twitter.com/chs">@chs</a>)</td>
+    </tr>
+</table>
+
+# Installation
+gem install PwnedCheck
+
+# Usage
 
 `````ruby
 require 'pwnedcheck'
