@@ -2,27 +2,43 @@ require 'mechanize'
 require 'addressable/uri'
 require 'json'
 
+# PwnedCheck module
 module PwnedCheck
+  # Thrown if the email address being checked is not found
   class NotFound < Exception
     def initialize
       super
     end
   end
 
+  # Thrown if the email address being checked does not have a valid format
   class BadRequest < Exception
     def initialize
       super
     end
   end
 
+  # Check the address
+  #
+  # Example:
+  #  >> PwnedCheck.check('chs@chs.us')
+  #
+  # Arguments:
+  # address: String
   def self.check(address)
     agent = Mechanize.new
     begin
       url =  "http://haveibeenpwned.com/api/breachedaccount/#{address}"
       page = agent.get Addressable::URI.parse(url)
-    rescue Mechanize::ResponseCodeError  => e
-      raise NotFound if e.response_code == '404'
-      raise BadRequest if e.response_code == '400'
+    rescue Mechanize::ResponseCodeError  => ex
+      case ex.response_code
+      when '404'
+        raise NotFound
+      when '400'
+        raise BadRequest
+      else
+        raise e
+      end
     else
       JSON.parse(page.content)
     end
