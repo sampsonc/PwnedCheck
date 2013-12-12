@@ -5,6 +5,7 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 
 #Usage
 
+```
 require 'pwnedcheck'
 
 sites = PwnedCheck::check('chs@chs.us')
@@ -23,3 +24,4 @@ begin
 rescue PwnedCheck::NotFound => e
   puts "Not Found"
 end
+```
