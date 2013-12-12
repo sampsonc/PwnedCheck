@@ -27,9 +27,9 @@ require 'pwnedcheck'
 
 # The 3 cases.
 # foo@bar.com is a valid address on the site
-# foofoofoofoo@chs.us is a valid address, but not on the site
+# foo232323ce23ewd@bar.com is a valid address, but not on the site
 # foo.bar.com is an invalid format
-addresses = ['foo@bar.com', 'foofoofoofoo@chs.us', 'foo.bar.com']
+addresses = ['foo@bar.com', 'foo232323ce23ewd@bar.com', 'foo.bar.com']
 
 addresses.each do |address|
   begin
