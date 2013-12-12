@@ -26,10 +26,10 @@ gem install PwnedCheck
 require 'pwnedcheck'
 
 # The 3 cases.
-# chs@chs.us is a valid address on the site
-# abcabc@chs.us is a valid address, but not on the site
-# chschs.us is an invalid format
-addresses = ['chs@chs.us', 'abcabc@chs.us', 'chschs.us']
+# foo@bar.com is a valid address on the site
+# foofoofoofoo@chs.us is a valid address, but not on the site
+# foo.bar.com is an invalid format
+addresses = ['foo@bar.com', 'foofoofoofoo@chs.us', 'foo.bar.com']
 
 addresses.each do |address|
   begin
