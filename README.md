@@ -8,23 +8,21 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 `````ruby
 require 'pwnedcheck'
 
-#Valid address
-sites = PwnedCheck::check('chs@chs.us')
-for site in sites
-  puts site
-end
+# The 3 cases.
+# chs@chs.us is a valid address on the site
+# abcabc@chs.us is a valid address, but not on the site
+# chschs.us is an invalid format
+addresses = ['chs@chs.us', 'abcabc@chs.us', 'chschs.us']
 
-#Invalid email format
-begin
-  puts PwnedCheck::check('chschs.us')
-rescue PwnedCheck::BadRequest => e
-  puts "Bad Request"
+addresses.each do |address|
+  begin
+    sites = PwnedCheck::check(address)
+    puts "#{address} --> Not found on http://haveibeenpwned.com" if sites.length == 0
+    sites.each do |site|
+      puts "#{address} --> #{site}"
+    end
+  rescue PwnedCheck::BadRequest => e
+    puts "#{address} --> Invalid email address format"
+  end
 end
-
-#Email address not found on site
-begin
-  puts PwnedCheck::check('chadasfdfs@chs.us')
-rescue PwnedCheck::NotFound => e
-  puts "Not Found"
-end
-```
+`````
