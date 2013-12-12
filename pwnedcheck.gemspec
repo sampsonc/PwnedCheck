@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '1.0.1'
-  s.date        = '2013-12-11'
-  s.summary     = "Checks your email address against haveibeenpwned.com."
-  s.description = "Checks your email address against haveibeenpwned.com."
+  s.version     = '1.0.2'
+  s.date        = '2013-12-12'
+  s.summary     = "Checks an email address against haveibeenpwned.com."
+  s.description = "Checks an email address against haveibeenpwned.com."
   s.authors     = ["Carl Sampson"]
   s.email       = 'chs@chs.us'
   s.files       = ["lib/pwnedcheck.rb"]
