@@ -4,13 +4,6 @@ require 'json'
 
 # PwnedCheck module
 module PwnedCheck
-  # Thrown if the email address being checked is not found
-  class NotFound < Exception
-    def initialize
-      super
-    end
-  end
-
   # Thrown if the email address being checked does not have a valid format
   class BadRequest < Exception
     def initialize
@@ -33,7 +26,7 @@ module PwnedCheck
     rescue Mechanize::ResponseCodeError  => ex
       case ex.response_code
       when '404'
-        raise NotFound
+        []
       when '400'
         raise BadRequest
       else
