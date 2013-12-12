@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '0.0.0'
+  s.version     = '1.0.0'
   s.date        = '2013-12-11'
   s.summary     = "Checks your email address against haveibeenpwned.com."
   s.description = "Checks your email address against haveibeenpwned.com."
