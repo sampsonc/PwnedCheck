@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Carl Sampson"]
   s.email       = 'chs@chs.us'
   s.files       = ["lib/pwnedcheck.rb"]
-  s.homepage    = 'http://www.chs.us/pwnedcheck'
+  s.homepage    = 'http://github.com/sampsonc/PwnedCheck'
   s.license       = 'MIT'
   s.add_runtime_dependency 'mechanize'
   s.add_runtime_dependency 'addressable'
