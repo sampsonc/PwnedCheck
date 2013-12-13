@@ -5,7 +5,7 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 <table>
     <tr>
         <th>Version</th>
-        <td>1.0.8</td>
+        <td>1.0.9</td>
     </tr>
     <tr>
        <th>Author</th>
