@@ -40,7 +40,7 @@ module PwnedCheck
   # @return [Array] an array of sites that the email address is associated with
   def self.check(address)
     agent = Mechanize.new
-    agent.user_agent_alias = 'PwnedCheck (http://www.chs.us/PwnedCheck)'
+    agent.user_agent = 'PwnedCheck (http://www.chs.us/PwnedCheck)'
     begin
       url =  "http://haveibeenpwned.com/api/breachedaccount/#{address}"
       page = agent.get Addressable::URI.parse(url)
