@@ -23,14 +23,14 @@ SOFTWARE.
 
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '1.0.6'
-  s.date        = '2013-12-12'
+  s.version     = '1.0.7'
+  s.date        = '2013-12-13'
   s.summary     = "Checks an email address against haveibeenpwned.com."
   s.description = "Checks an email address against haveibeenpwned.com."
   s.authors     = ["Carl Sampson"]
   s.email       = 'chs@chs.us'
   s.files       = ["lib/pwnedcheck.rb"]
-  s.homepage    = 'http://github.com/sampsonc/PwnedCheck'
+  s.homepage    = 'http://www.chs.us/PwnedCheck'
   s.license      = 'MIT'
   s.has_rdoc    = 'yard'
   s.add_runtime_dependency 'mechanize'
