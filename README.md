@@ -5,15 +5,19 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 <table>
     <tr>
         <th>Version</th>
-        <td>1.0.4</td>
-    </tr>
-    <tr>
-        <th>Github</th>
-        <td><a href="http://github.com/sampsonc/PwnedCheck">http://github.com/sampsonc/PwnedCheck</a></td>
+        <td>1.0.8</td>
     </tr>
     <tr>
        <th>Author</th>
        <td><a href="http://www.chs.us">Carl Sampson</a> (<a href="http://twitter.com/chs">@chs</a>)</td>
+    </tr>
+    <tr>
+        <th>Page</th>
+        <td><a href="http://www.chs.us/PwnedCheck">http://www.chs.us/PwnedCheck</a></td>
+    </tr>
+    <tr>
+        <th>Github</th>
+        <td><a href="http://github.com/sampsonc/PwnedCheck">http://github.com/sampsonc/PwnedCheck</a></td>
     </tr>
 </table>
 
