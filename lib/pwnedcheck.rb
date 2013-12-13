@@ -36,13 +36,8 @@ module PwnedCheck
 
   # Check an address against http://haveibeenpwned.com
   #
-  # == Parameters:
-  # address::
-  #   An email address to check
-  #
-  # == Returns::
-  #   An array of sites the email address was found on or a BadRequest exception
-  #
+  # @param address [String] the email address to check
+  # @return [Array] an array of sites that the email address is associated with
   def self.check(address)
     agent = Mechanize.new
     begin
