@@ -38,9 +38,12 @@ addresses = ['foo@bar.com', 'foo232323ce23ewd@bar.com', 'foo.bar.com']
 addresses.each do |address|
   begin
     sites = PwnedCheck::check(address)
-    puts "#{address} --> Not found on http://haveibeenpwned.com" if sites.length == 0
-    sites.each do |site|
-      puts "#{address} --> #{site}"
+    if sites.length == 0
+      puts "#{address} --> Not found on http://haveibeenpwned.com"
+    else
+      sites.each do |site|
+        puts "#{address} --> #{site}"
+      end
     end
   rescue PwnedCheck::BadRequest => e
     puts "#{address} --> Invalid email address format"
