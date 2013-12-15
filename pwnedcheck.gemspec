@@ -23,7 +23,7 @@ SOFTWARE.
 
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '1.0.11'
+  s.version     = '1.0.12'
   s.date        = '2013-12-13'
   s.summary     = "Checks an email address against haveibeenpwned.com."
   s.description = "Checks an email address against haveibeenpwned.com."
@@ -37,4 +37,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'addressable'
   s.extra_rdoc_files  = %w(README.md AUTHOR.md LICENSE.md)
   s.rdoc_options      = [ '--charset=UTF-8' ]
+  s.cert_chain  = ['certs/sampsonc.pem']
+  s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
 end
