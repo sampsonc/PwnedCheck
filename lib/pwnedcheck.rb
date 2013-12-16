@@ -21,16 +21,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 =end
 
-require 'mechanize'
-require 'addressable/uri'
+require 'net/http'
+require 'cgi'
 require 'json'
 
 # PwnedCheck module
 module PwnedCheck
   # Thrown if the email address being checked does not have a valid format
-  class BadRequest < Exception
+  class InvalidEmail < Exception
     def initialize
-      super "Invalid email address format"
+      super 'Invalid email address format'
     end
   end
 
@@ -39,22 +39,16 @@ module PwnedCheck
   # @param address [String] the email address to check
   # @return [Array] an array of sites that the email address is associated with
   def self.check(address)
-    agent = Mechanize.new
-    agent.user_agent = 'PwnedCheck (http://www.chs.us/PwnedCheck)'
-    begin
-      url =  "http://haveibeenpwned.com/api/breachedaccount/#{address}"
-      page = agent.get Addressable::URI.parse(url)
-    rescue Mechanize::ResponseCodeError  => ex
-      case ex.response_code
+    uri = URI.parse "http://haveibeenpwned.com/api/breachedaccount/#{CGI::escape(address)}"
+    response = Net::HTTP.get_response uri
+    case response.code
+      when '200'
+        JSON.parse response.body
       when '404'
         []
       when '400'
-        raise BadRequest
+        raise InvalidEmail
       else
-        raise ex
-      end
-    else
-      JSON.parse(page.content)
     end
   end
 end
