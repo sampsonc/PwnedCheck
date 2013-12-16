@@ -5,7 +5,7 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 <table>
     <tr>
         <th>Version</th>
-        <td>1.0.13</td>
+        <td>1.0.14</td>
     </tr>
     <tr>
        <th>Author</th>
@@ -45,8 +45,8 @@ addresses.each do |address|
         puts "#{address} --> #{site}"
       end
     end
-  rescue PwnedCheck::BadRequest => e
-    puts "#{address} --> Invalid email address format"
+  rescue PwnedCheck::InvalidEmail => e
+    puts "#{address} --> #{e.message}"
   end
 end
 `````

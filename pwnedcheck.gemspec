@@ -23,7 +23,7 @@ SOFTWARE.
 
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '1.0.13'
+  s.version     = '1.0.14'
   s.date        = '2013-12-16'
   s.summary     = "Checks an email address against haveibeenpwned.com."
   s.description = "Checks an email address against haveibeenpwned.com."
@@ -33,8 +33,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://www.chs.us/PwnedCheck'
   s.license      = 'MIT'
   s.has_rdoc    = 'yard'
-  s.add_runtime_dependency 'mechanize'
-  s.add_runtime_dependency 'addressable'
   s.extra_rdoc_files  = %w(README.md AUTHOR.md LICENSE.md)
   s.rdoc_options      = [ '--charset=UTF-8' ]
   s.cert_chain  = ['certs/sampsonc.pem']
