@@ -30,7 +30,7 @@ module PwnedCheck
   # Thrown if the email address being checked does not have a valid format
   class BadRequest < Exception
     def initialize
-      super
+      super "Invalid email address format"
     end
   end
 
