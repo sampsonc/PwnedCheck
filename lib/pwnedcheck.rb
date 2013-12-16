@@ -42,13 +42,12 @@ module PwnedCheck
     uri = URI.parse "http://haveibeenpwned.com/api/breachedaccount/#{CGI::escape(address)}"
     response = Net::HTTP.get_response uri
     case response.code
-      when '200'
-        JSON.parse response.body
-      when '404'
-        []
-      when '400'
-        raise InvalidEmail
-      else
+    when '200'
+      JSON.parse response.body
+    when '404'
+      []
+    when '400'
+      fail InvalidEmail
     end
   end
 end
