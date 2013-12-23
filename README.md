@@ -5,7 +5,7 @@ Ruby gem to check to see if an email address is on http://haveibeenpwned.com
 <table>
     <tr>
         <th>Version</th>
-        <td>1.0.15</td>
+        <td>1.0.16</td>
     </tr>
     <tr>
        <th>Author</th>
@@ -52,7 +52,3 @@ addresses.each do |address|
   end
 end
 `````
-<a title="Real Time Web Analytics" href="http://clicky.com/100685763"><img alt="Real Time Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" width="0" height="0"/></a>
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(100685763); }catch(e){}</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100685763ns.gif" /></p></noscript>
