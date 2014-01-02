@@ -23,8 +23,8 @@ SOFTWARE.
 
 Gem::Specification.new do |s|
   s.name        = 'PwnedCheck'
-  s.version     = '1.0.16'
-  s.date        = '2013-12-22'
+  s.version     = '1.0.17'
+  s.date        = '2014-1-2'
   s.summary     = "Checks an email address against haveibeenpwned.com."
   s.description = "Checks an email address against haveibeenpwned.com."
   s.authors     = ["Carl Sampson"]

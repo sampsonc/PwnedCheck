@@ -36,10 +36,10 @@ module PwnedCheck
 
   # Check an address against http://haveibeenpwned.com
   #
-  # @param address [String] the email address to check
+  # @param item [String] the item to check.  Could be an email address, phone number, or username
   # @return [Array] an array of sites that the email address is associated with
-  def self.check(address)
-    uri = URI.parse "http://haveibeenpwned.com/api/breachedaccount/#{CGI::escape(address)}"
+  def self.check(item)
+    uri = URI.parse "https://haveibeenpwned.com/api/breachedaccount/#{CGI::escape(item)}"
     response = Net::HTTP.get_response uri
     case response.code
     when '200'
