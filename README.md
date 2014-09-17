@@ -45,7 +45,10 @@ list.each do |item|
       puts "#{item} --> Not found on http://haveibeenpwned.com"
     else
       sites.each do |site|
-        puts "#{item} --> #{site}"
+        puts "#{item}"
+        puts "\tTitle=#{site['Title']}"
+        puts "\tBreach Date=#{site['BreachDate']}"
+        puts "\tDescription=#{site['Description']}"
       end
     end
   rescue PwnedCheck::InvalidEmail => e
@@ -71,7 +74,11 @@ list.each do |item|
       puts "#{item} --> Not found on http://haveibeenpwned.com"
     else
       sites.each do |site|
-        puts "#{item} --> #{site}"
+        puts "#{item}"
+        puts "\tSource=#{site['Source']}"
+        puts "\tTitle=#{site['Title']}"
+        puts "\tDate=#{site['Date']}"
+        puts "\tEmail Count=#{site['EmailCount']}"
       end
     end
   rescue PwnedCheck::InvalidEmail => e
