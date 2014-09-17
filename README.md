@@ -45,7 +45,8 @@ list.each do |item|
       puts "#{item} --> Not found on http://haveibeenpwned.com"
     else
       sites.each do |site|
-        puts "#{item}"
+        #site is a hash of data returned
+        puts item
         puts "\tTitle=#{site['Title']}"
         puts "\tBreach Date=#{site['BreachDate']}"
         puts "\tDescription=#{site['Description']}"
@@ -74,7 +75,8 @@ list.each do |item|
       puts "#{item} --> Not found on http://haveibeenpwned.com"
     else
       sites.each do |site|
-        puts "#{item}"
+        #site is a hash of data returned
+        puts item
         puts "\tSource=#{site['Source']}"
         puts "\tTitle=#{site['Title']}"
         puts "\tDate=#{site['Date']}"
