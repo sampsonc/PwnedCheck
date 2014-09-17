@@ -1,4 +1,5 @@
 # PwnedCheck
+# Carl Sampson
 
 Ruby gem to check to see if an email address, phone number, or username is on http://haveibeenpwned.com
 
