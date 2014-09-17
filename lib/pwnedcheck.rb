@@ -39,7 +39,7 @@ module PwnedCheck
   # @param item [String] the item to check.  Could be an email address, phone number, or username
   # @return [Array] an array of sites that the email address is associated with
   def self.check(item)
-    uri = URI.parse "https://haveibeenpwned.com/api/breachedaccount/#{CGI::escape(item)}"
+    uri = URI.parse "https://haveibeenpwned.com/api/v2/breachedaccount/#{CGI::escape(item)}"
     response = Net::HTTP.get_response uri
     case response.code
     when '200'
@@ -50,4 +50,22 @@ module PwnedCheck
       fail InvalidEmail
     end
   end
+
+  # Check an address for pastes against http://haveibeenpwned.com
+  #
+  # @param item [String] the item to check.  Could be an email address, phone number, or username
+  # @return [Array] an array of pastes that the email address is associated with
+  def self.check_pastes(item)
+    uri = URI.parse "https://haveibeenpwned.com/api/v2/pasteaccount/#{CGI::escape(item)}"
+    response = Net::HTTP.get_response uri
+    case response.code
+    when '200'
+      JSON.parse response.body
+    when '404'
+      []
+    when '400'
+      fail InvalidEmail
+    end
+  end
+
 end
