@@ -57,7 +57,7 @@ list.each do |item|
     puts "#{item} --> #{e.message}"
   end
 end
-````
+`````
 
 `````ruby
 require 'pwnedcheck'
@@ -88,4 +88,4 @@ list.each do |item|
     puts "#{item} --> #{e.message}"
   end
 end
-````
+`````
